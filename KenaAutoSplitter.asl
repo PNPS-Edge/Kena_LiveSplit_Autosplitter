@@ -1,8 +1,9 @@
 state("Kena-Win64-Shipping")
 {
     byte IsLoading : 0x528E6B0, 0x0;
-    byte IsPaused : 0x52A0478, 0x0368, 0x17D8, 0x388;
-    byte IsInGame: 0x523A9E8, 0x9C8, 0x1310, 0x120;
+    byte CanPlayerMove: 0x4E61098, 0x30, 0x4D0, 0xE0;
+    bool IsMenuOpened: 0x52688F8, 0x1D0;
+    byte IsMainMenuOpened: 0x3A83450, 0x250;
 }
 
 startup
@@ -19,16 +20,17 @@ update
 
 start 
 {
+    return old.IsMainMenuOpened == 2 && current.IsMainMenuOpened != 2;
 }
 
 reset 
 {
-    //return current.IsPaused == 0 && old.IsPaused != 0;
+    return old.IsMainMenuOpened != 2 && current.IsMainMenuOpened == 2;
 }
 
 isLoading
 {
-    return current.IsLoading > 0 || current.IsInGame != 1;
+    return current.IsLoading > 0 || current.CanPlayerMove != 1;
 }
 
 split
