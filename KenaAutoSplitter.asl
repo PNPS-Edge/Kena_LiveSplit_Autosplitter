@@ -1,8 +1,8 @@
-state("Kena-Win64-Shipping")
+state("Kena-Win64-Shipping", "1.05")
 {
     byte IsLoading : 0x528E6B0, 0x0;
-    byte CanPlayerMove: 0x4E61098, 0x30, 0x4D0, 0xE0;
-    bool IsMenuOpened: 0x52688F8, 0x1D0;
+    byte CanPlayerMove: 0x53BA840, 0x30, 0x660, 0xD0;
+    bool IsPaused: 0x53FE950, 0x168, 0x368, 0x88, 0x70;
     byte IsMainMenuOpened: 0x3A83450, 0x250;
 }
 
