@@ -1,13 +1,20 @@
 state("Kena-Win64-Shipping", "1.13")
 {
-    byte IsLoading : 0x528E6B0, 0x0;
-    byte CanPlayerMove: 0x53BA840, 0x30, 0x660, 0xD0;
-    bool IsPaused: 0x53FE950, 0x168, 0x368, 0x88, 0x70;
-    byte IsMainMenuOpened: 0x3A83450, 0x250;
+    int Rots : 0x53F0220, 0x128, 0x3F8, 0x224;
 }
 
 startup
 {
+    #region Settings
+
+    // settings tree
+    settings.Add("splits", false, "All Splits");
+        settings.Add("any", false, "Any", "splits");
+
+        settings.Add("allRots", false, "All Rots", "splits");
+            settings.Add("rots", false, "Splits on each rot", "allRots");
+
+    #endregion Settings
 }
 
 init 
@@ -20,19 +27,20 @@ update
 
 start 
 {
-    return old.IsMainMenuOpened == 2 && current.IsMainMenuOpened != 2;
 }
 
 reset 
 {
-    return old.IsMainMenuOpened != 2 && current.IsMainMenuOpened == 2;
 }
 
 isLoading
 {
-    return current.IsLoading > 0 || current.CanPlayerMove != 1;
 }
 
 split
 {
+    if (settings["allRots"] && settings["rots"])
+    {
+        return current.Rots > old.Rots;
+    }
 }
