@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="34">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>5</ID>
+      <Description>"Rots"</Description>
+      <LastState Value="10" RealAddress="23385651864"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"Kena-Win64-Shipping.exe"+053F0220</Address>
+      <Offsets>
+        <Offset>224</Offset>
+        <Offset>3F8</Offset>
+        <Offset>128</Offset>
+      </Offsets>
+    </CheatEntry>
+    <CheatEntry>
+      <ID>7</ID>
+      <Description>"Karma"</Description>
+      <LastState Value="45" RealAddress="23352526630"/>
+      <VariableType>4 Bytes</VariableType>
+      <Address>"Kena-Win64-Shipping.exe"+053EC0A8</Address>
+      <Offsets>
+        <Offset>30</Offset>
+        <Offset>C0</Offset>
+        <Offset>B0</Offset>
+      </Offsets>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>

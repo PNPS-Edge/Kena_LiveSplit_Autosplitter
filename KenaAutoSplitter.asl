@@ -1,4 +1,4 @@
-state("Kena-Win64-Shipping", "1.05")
+state("Kena-Win64-Shipping", "1.13")
 {
     byte IsLoading : 0x528E6B0, 0x0;
     byte CanPlayerMove: 0x53BA840, 0x30, 0x660, 0xD0;
