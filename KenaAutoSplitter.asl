@@ -1,8 +1,8 @@
-state("Kena-Win64-Shipping", "1.13")
+state("Kena-Win64-Shipping", "1.14")
 {
-    int Rots : 0x53F0220, 0x128, 0x3F8, 0x224;
-    int GameStatus : 0x53EBCD8, 0x8, 0xD8, 0x58;
-    byte IsMainMenu : 0x4DD2CC8;
+    int Rots : 0x53F1520, 0x128, 0x3F8, 0x224;
+    int RotsLevel : 0x53F1520, 0x128, 0x3F8, 0x480;
+    byte IsMainMenu : 0x4DD3CC8
 }
 
 startup
@@ -39,7 +39,7 @@ reset
 
 isLoading
 {
-    return current.GameStatus > 0;
+    //return current.GameStatus > 0;
 }
 
 split
